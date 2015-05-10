@@ -15,6 +15,10 @@ module TestAttributes
     Date.new(2011, 4, 4)
   end
 
+  def other_valid_date
+    Date.new(2011, 5, 4)
+  end
+
   def valid_help_attributes
     { date: valid_date, description: "valid description" }
   end

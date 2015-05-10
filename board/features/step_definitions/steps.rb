@@ -48,6 +48,7 @@ When(/^I view my team's standup$/) do
     team_id: gui.spy_created_team.id,
     repo_factory: repo_factory,
     observer: gui,
+    date: valid_date
   ).execute
 end
 

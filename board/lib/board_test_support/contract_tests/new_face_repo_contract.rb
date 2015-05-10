@@ -1,6 +1,6 @@
 require "board/entities/new_face"
 require "board_test_support/contract_tests/entity_repo_contract"
-require "board_test_support/contract_tests/entity_that_belongs_to_team_repo_contract"
+require "board_test_support/contract_tests/entity_that_belongs_to_team_repo_with_date_contract"
 
 def assert_works_like_a_new_face_repo(new_face_repo_factory:)
   assert_works_like_an_entity_repo(
@@ -8,7 +8,7 @@ def assert_works_like_a_new_face_repo(new_face_repo_factory:)
     entity_factory:       -> { Board::Entities::NewFace.new },
   )
 
-  assert_works_like_an_entity_repo_that_belongs_to_team(
+  assert_works_like_an_entity_repo_that_belongs_to_team_with_date(
     entity_repo_factory: new_face_repo_factory,
     entity_class:        Board::Entities::NewFace,
   )

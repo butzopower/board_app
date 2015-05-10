@@ -1,4 +1,4 @@
-require "board_test_support/doubles/fake_entity_belonging_to_team_repo"
+require "board_test_support/doubles/fake_entity_belonging_to_team_with_date_repo"
 
-class FakeNewFaceRepo < FakeEntityBelongingToTeamRepo
+class FakeNewFaceRepo < FakeEntityBelongingToTeamWithDateRepo
 end

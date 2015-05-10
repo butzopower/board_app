@@ -11,11 +11,12 @@ module Board
         end
       end
 
-      def initialize(team_id:, observer:, repo_factory:)
+      def initialize(team_id:, observer:, repo_factory:, date:)
         @repo_factory = repo_factory
         @observer = observer
         @team_id = team_id
         @items = {}
+        @date = date
       end
 
       def execute
@@ -35,7 +36,10 @@ module Board
 
       def collect_standup_items
         standup_item_collectors.each do |item_collector|
-          item_collector.call(repo_factory: @repo_factory, standup_use_case: self, team_id: @team_id)
+          item_collector.call(repo_factory: @repo_factory,
+                              standup_use_case: self,
+                              team_id: @team_id,
+                              date: @date)
         end
       end
 
